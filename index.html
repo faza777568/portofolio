@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portofolio M. Faza Fauzan, siswa TJKT SMK Muhammadiyah 1 Sukoharjo."
+    />
+    <title>M. Faza Fauzan | Madara Uchiha Portfolio</title>
+    <style>
+      :root {
+          --bg: #08090d;
+          --panel: #14151c;
+          --red: #c51d35;
+          --red2: #f04455;
+          --purple: #8055c7;
+          --gold: #c6a66b;
+          --text: #f4f0ed;
+          --muted: #b7b2b4;
+          --line: #ffffff20
+      }
+
+      * {
+          box-sizing: border-box
+      }
+
+      html {
+          scroll-behavior: smooth
+      }
+
+      body {
+          margin: 0;
+          background: var(--bg);
+          color: var(--text);
+          font-family: Arial, Helvetica, sans-serif;
+          line-height: 1.65
+      }
+
+      /* Video background */
+      .background-video {
+          position: fixed;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          z-index: 0;
+          pointer-events: none;
+      }
+
+      body::before {
+          content: "";
+          position: fixed;
+          inset: 0;
+          z-index: 1;
+          pointer-events: none;
+          background:
+              linear-gradient(180deg, rgba(8, 9, 13, .72), rgba(8, 9, 13, .80)),
+              radial-gradient(ellipse at 80% 5%, #53132180, transparent 45%),
+              radial-gradient(ellipse at 10% 70%, #34205255, transparent 40%);
+      }
+
+      header, main, footer {
+          position: relative;
+          z-index: 2;
+      }
+
+      a {
+          color: inherit;
+          text-decoration: none
+      }
+
+      .wrap {
+          width: min(1100px, calc(100% - 40px));
+          margin: auto
+      }
+
+      header {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          background: #08090de8;
+          backdrop-filter: blur(12px);
+          border-bottom: 1px solid var(--line)
+      }
+
+      nav {
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between
+      }
+
+      .brand {
+          font-weight: 900;
+          letter-spacing: 3px
+      }
+
+      .brand span {
+          color: var(--red2)
+      }
+
+      .links {
+          display: flex;
+          gap: 24px;
+          color: var(--muted);
+          font-size: .9rem
+      }
+
+      .links a:hover {
+          color: var(--red2)
+      }
+
+      .hero {
+          min-height: 620px;
+          padding: 85px 0;
+          display: grid;
+          grid-template-columns: 1.15fr .85fr;
+          gap: 45px;
+          align-items: center
+      }
+
+      .eyebrow {
+          color: var(--gold);
+          font-size: .75rem;
+          font-weight: 800;
+          letter-spacing: 3px;
+          text-transform: uppercase
+      }
+
+      .eyebrow:before {
+          content: "";
+          display: inline-block;
+          width: 26px;
+          height: 2px;
+          background: var(--red2);
+          margin: 0 10px 4px 0
+      }
+
+      h1 {
+          font-size: clamp(2.8rem, 6vw, 5.3rem);
+          line-height: .98;
+          letter-spacing: -2px;
+          margin: 22px 0;
+          text-transform: uppercase
+      }
+
+      h1 span {
+          color: var(--red2);
+          text-shadow: 3px 3px 0 #4c1020
+      }
+
+      .intro {
+          max-width: 650px;
+          color: var(--muted);
+          font-size: 1.05rem
+      }
+
+      .buttons {
+          display: flex;
+          gap: 13px;
+          flex-wrap: wrap;
+          margin-top: 28px
+      }
+
+      .btn {
+          display: inline-block;
+          padding: 12px 19px;
+          border: 1px solid var(--red2);
+          border-radius: 4px;
+          font-weight: 800
+      }
+
+      .btn.primary {
+          background: var(--red);
+          color: white
+      }
+
+      .btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px #c51d3540
+      }
+
+      .crest {
+          min-height: 390px;
+          position: relative;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+          background: linear-gradient(145deg, #41121e, #17121c 65%);
+          border: 1px solid #c51d3580;
+          clip-path: polygon(50% 0, 91% 14%, 100% 50%, 83% 88%, 50% 100%, 17% 88%, 0 50%, 9% 14%)
+      }
+
+      .crest:before,
+      .crest:after {
+          content: "";
+          position: absolute;
+          border: 1px solid #c6a66b70;
+          border-radius: 50%;
+          width: 260px;
+          height: 260px
+      }
+
+      .crest:after {
+          width: 330px;
+          height: 330px;
+          border-color: #c51d3560
+      }
+
+      .eye {
+          z-index: 1;
+          color: var(--red2);
+          font-size: clamp(3.4rem, 7vw, 6rem);
+          font-weight: 900;
+          text-shadow: 0 0 28px #f0445570
+      }
+
+      .crest-label {
+          position: absolute;
+          bottom: 35px;
+          color: var(--gold);
+          font-size: .7rem;
+          font-weight: 800;
+          letter-spacing: 4px;
+          z-index: 2
+      }
+
+      section {
+          padding: 70px 0
+      }
+
+      .heading {
+          font-size: 2rem;
+          line-height: 1.1;
+          margin: 0 0 8px;
+          text-transform: uppercase
+      }
+
+      .heading span {
+          color: var(--red2)
+      }
+
+      .sub {
+          color: var(--muted);
+          margin: 0 0 27px
+      }
+
+      .two {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 18px
+      }
+
+      .card {
+          padding: 25px;
+          background: linear-gradient(145deg, #211820, var(--panel));
+          border: 1px solid var(--line);
+          border-left: 3px solid var(--red)
+      }
+
+      .card h3,
+      .skill h3,
+      .project h3 {
+          margin: 0 0 8px
+      }
+
+      .card p,
+      .skill p,
+      .project p {
+          color: var(--muted);
+          margin: 0
+      }
+
+      .skills {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 15px
+      }
+
+      .skill {
+          padding: 22px;
+          background: var(--panel);
+          border: 1px solid var(--line);
+          border-top: 3px solid var(--red)
+      }
+
+      .skill:nth-child(2) {
+          border-top-color: var(--purple)
+      }
+
+      .skill:nth-child(3) {
+          border-top-color: var(--gold)
+      }
+
+      .emoji {
+          font-size: 1.8rem
+      }
+
+      .skill p,
+      .project p {
+          font-size: .93rem
+      }
+
+      .projects {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 17px
+      }
+
+      .project {
+          padding: 24px;
+          background: linear-gradient(130deg, #29151d, #12131a);
+          border: 1px solid var(--line)
+      }
+
+      .tag {
+          color: var(--gold);
+          font-size: .72rem;
+          font-weight: 800;
+          letter-spacing: 1px;
+          text-transform: uppercase
+      }
+
+      .project h3 {
+          margin-top: 9px
+      }
+
+      .contact {
+          padding: 30px;
+          background: linear-gradient(100deg, #3b111b, #20172b);
+          border: 1px solid #c51d3566;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px
+      }
+
+      .contact p {
+          color: var(--muted);
+          margin: 5px 0 0
+      }
+
+      footer {
+          text-align: center;
+          padding: 27px 0;
+          color: #938b91;
+          border-top: 1px solid var(--line);
+          font-size: .88rem
+      }
+
+      @media(max-width:760px) {
+          .hero {
+              grid-template-columns: 1fr;
+              padding: 65px 0
+          }
+
+          .crest {
+              min-height: 300px;
+              max-width: 430px;
+              width: 100%;
+              margin: auto
+          }
+
+          .two,
+          .projects {
+              grid-template-columns: 1fr
+          }
+
+          .skills {
+              grid-template-columns: 1fr 1fr
+          }
+
+          .contact {
+              align-items: flex-start;
+              flex-direction: column
+          }
+
+          .links {
+              gap: 12px;
+              font-size: .8rem
+          }
+      }
+
+      @media(max-width:480px) {
+          .wrap {
+              width: calc(100% - 28px)
+          }
+
+          .links {
+              gap: 8px
+          }
+
+          .links a {
+              font-size: .72rem
+          }
+
+          .skills {
+              grid-template-columns: 1fr
+          }
+
+          h1 {
+              letter-spacing: -1px
+          }
+      }
+    </style>
+  </head>
+
+  <body>
+    <video class="background-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="background.mp4" type="video/mp4" />
+    </video>
+
+    <header>
+      <nav class="wrap">
+        <a class="brand" href="#home">FAZA<span>.</span></a>
+        <div class="links">
+          <a href="#about">Tentang</a>
+          <a href="#skills">Keahlian</a>
+          <a href="#projects">Proyek</a>
+          <a href="#contact">Kontak</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap" id="home">
+        <div>
+          <div class="eyebrow">Portfolio · Student of TJKT</div>
+          <h1>WAKE UP<br />TO <span>REALITY.</span></h1>
+          <p class="intro">
+            Halo, saya <strong>M. Faza Fauzan</strong>, siswa SMK Muhammadiyah 1
+            Sukoharjo jurusan Teknik Jaringan Komputer dan Telekomunikasi
+            (TJKT). Saya tertarik mempelajari jaringan komputer, Linux, dan
+            pengembangan website.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#projects">LIHAT PROYEK</a>
+            <a class="btn" href="#about">TENTANG SAYA</a>
+          </div>
+        </div>
+        <div class="crest">
+          <div class="eye">写輪眼</div>
+          <div class="crest-label">M. FAZA FAUZAN · UCHIHA THEME</div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="wrap">
+          <h2 class="heading">BEHIND THE <span>LEGEND</span></h2>
+          <p class="sub">Kenali saya lebih dekat</p>
+          <div class="two">
+            <article class="card">
+              <h3>Profil Saya</h3>
+              <p>
+                Nama saya M. Faza Fauzan. Saya menempuh pendidikan di SMK
+                Muhammadiyah 1 Sukoharjo pada jurusan Teknik Jaringan Komputer
+                dan Telekomunikasi (TJKT).
+              </p>
+            </article>
+            <article class="card">
+              <h3>Tujuan Saya</h3>
+              <p>
+                Saya ingin terus belajar, mencoba hal baru, dan mengembangkan
+                kemampuan di bidang teknologi. Saya percaya kemampuan tumbuh
+                melalui latihan, rasa ingin tahu, dan konsistensi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="wrap">
+          <h2 class="heading">SKILLS & <span>ABILITIES</span></h2>
+          <p class="sub">Bidang yang sedang saya pelajari</p>
+          <div class="skills">
+            <article class="skill">
+              <div class="emoji">🖧</div>
+              <h3>Jaringan Komputer</h3>
+              <p>
+                Dasar jaringan, IP address, perangkat jaringan, dan
+                konektivitas.
+              </p>
+            </article>
+            <article class="skill">
+              <div class="emoji">💻</div>
+              <h3>Linux & Komputer</h3>
+              <p>
+                Terminal Linux, sistem operasi, perangkat keras, dan pengelolaan
+                file.
+              </p>
+            </article>
+            <article class="skill">
+              <div class="emoji">🌐</div>
+              <h3>Web & Docker</h3>
+              <p>HTML, CSS, web server, Nginx, dan dasar container Docker.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="wrap">
+          <h2 class="heading">MY <span>PROJECTS</span></h2>
+          <p class="sub">Proyek dan proses belajar</p>
+          <div class="projects">
+            <article class="project">
+              <div class="tag">01 / Web Development</div>
+              <h3>Website Portofolio</h3>
+              <p>
+                Membuat website pribadi menggunakan HTML dan CSS sebagai media
+                perkenalan dan dokumentasi kemampuan.
+              </p>
+            </article>
+            <article class="project">
+              <div class="tag">02 / Server & Container</div>
+              <h3>Web Server dengan Docker</h3>
+              <p>
+                Belajar menjalankan layanan website menggunakan Docker Compose
+                dan Nginx di lingkungan Linux.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="wrap">
+          <div class="contact">
+            <div>
+              <h2 class="heading">LET'S <span>CONNECT</span></h2>
+              <p>Terima kasih sudah mengunjungi portofolio saya.</p>
+            </div>
+            <a class="btn primary" href="mailto:">HUBUNGI SAYA</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2026 M. Faza Fauzan · SMK Muhammadiyah 1 Sukoharjo · TJKT</footer>
+  </body>
+</html>
